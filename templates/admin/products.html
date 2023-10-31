@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{%block header %}
+    <title>admin products </title>
+{%endblock%}
+{% block body %}
+    <table>
+        <tr>
+            <td>photo</td>
+            <td>name</td>
+            <td>desc</td>
+            <td>price</td>
+            <td>quantity</td>
+        </tr>
+    {% for p in product %}
+        <tr>
+            <td><img style="width: 150px;" src="/static/cover/{{p.id}}.jpg"> </td>
+            <td>{{p.name}}</td>
+            <td>{{p.description}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.quantity}}</td>
+            <td> <a href="/admin/dashboard/edit-product/{{p.id}}">edit</a></td>
+        </tr>
+    {%endfor%}
+    </table>
+    <form action="#" method="post" enctype="multipart/form-data" >
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input type="file" name="cover"> <br>
+        <input type="text" name="name" placeholder="name"><br>
+        <textarea name="description" placeholder="description"></textarea> <br>
+        <input type="number" name="price" placeholder="price"> <br>
+        <input type="number" name="quantity" placeholder="quantity" ><br>
+        <input type="submit" >
+    </form>
+
+{%endblock%}

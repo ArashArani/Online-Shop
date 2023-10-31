@@ -1,0 +1,4 @@
+ADMIN_USERNAME = 'admin'
+ADMIN_PASSWORD = '1234'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///database.db'
+SECRET_KEY = 'EHBMERAOB4#$%$fbfasb#fgadfbaVAZV'

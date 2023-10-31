@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{%block header %}
+    <title>user login</title>
+{%endblock%}
+{% block body %}
+    <h1>user sign up </h1>
+    <form action="#" method="post">
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input type="hidden" name="register" value='1'>
+        <input type="password" name="password" placeholder="password"> <br>
+        <input type="text" name="first_name" placeholder="First name"> <br>
+        <input type="text" name="last_name" placeholder="Last Name"> <br>
+        <input type="tel" name="phone" placeholder="Phone"> <br>
+        <input type="email" name="email" placeholder="Email"> <br>
+        <textarea name="address" placeholder="Address"></textarea>
+        <input type="submit">
+    </form>
+    <h1>user login</h1>
+    <form action="#" method="post">
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input type="password" name="password" placeholder="password"> <br>
+        <input type="submit">
+    </form>
+
+    {% for m in get_flashed_messages() %}
+      {{m}}
+    {% endfor %}
+{%endblock%}

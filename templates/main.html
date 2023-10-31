@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{%block header %}
+    <title>main page </title>
+{%endblock%}
+{% block body %}
+  {% for p in product %}
+    <a href="/product/{{p.id}}/{{p.name}}">{{p.name}}</a>
+  {% endfor %}"
+<a href="/about">about</a>
+{%endblock%}
